@@ -1,0 +1,86 @@
+*
+{
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    background-color: black;
+    color: white;
+}
+
+h1
+{
+    position: absolute;
+    color:white;
+    background-color: black;
+    width: 100%;
+    z-index:2;
+    top:10%;
+    text-align: center;
+}
+div .center
+{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#box
+{
+    position: relative;
+    background-color:white;
+    display: grid;
+    color:black;
+    justify-items: center;
+    align-items: center;
+    margin: .5em;
+    padding:2em 1em 2em 1em;
+    width:20px;
+}
+.boxcross::before
+{
+    transition-delay: 1s;
+    position:absolute;
+    content: "X";
+    font-size: 2em;
+    font-weight: 700;
+}
+.boxover::after
+{
+    position:absolute;
+    content:"O";
+    font-size: 2em;
+    font-weight: 700;
+}
+#name
+{
+    position: absolute;
+    transform: translateY(210px);
+    font-style: italic;
+    font-family: monospace;
+}
+#button
+{
+    position: absolute;
+    transform: translateY(270px);
+    font-family: monospace;
+    color:black;
+    border:1px solid white;
+    background: white;
+    border-radius: 5px;
+    padding:5px 10px 5px 10px;
+}
+#button:hover
+{
+    position: absolute;
+    transform: translateY(275px);
+    font-family: monospace;
+    color:black;
+    transition: .5s;
+    opacity:.5;
+    border:1px solid white;
+    background: white;
+    border-radius: 5px;
+    padding:5px 10px 5px 10px;
+}
