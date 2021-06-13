@@ -1,7 +1,7 @@
 var c=0;
 var o=[];
 var x=[];
-var draw=0;
+var draw=0,notdraw=0;
 var value=[[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]];
 function ocheck(arr)
 {
@@ -22,6 +22,7 @@ function ocheck(arr)
         if(counter==3)
         {
             window.alert("O won");
+            notdraw=1;
         }
         counter=0;
     }
@@ -45,6 +46,7 @@ function xcheck(arr)
         if(counter==3)
         {
             window.alert("X won");
+            notdraw=0;
         }
         counter=0;
     }
@@ -56,12 +58,12 @@ function over(i)
         select[i].className="col box boxover";
         o.push(i);
         draw++;
-        if(draw==9)
+        if(o.length>=3)
+        ocheck(o);
+        if(draw==9 && notdraw==0)
         {
             window.alert("Draw");
         }
-        if(o.length>=3)
-        ocheck(o);
     }
 }
 function cross(i)
@@ -71,12 +73,13 @@ function cross(i)
         select[i].className="col box boxcross";
         x.push(i);
         draw++;
-        if(draw==9)
+        if(x.length>=3)
+        xcheck(x);
+        if(draw==9 && notdraw==0)
         {
             window.alert("Draw");
         }
-        if(x.length>=3)
-        xcheck(x);
+        
     }
 }
 function count(i)
